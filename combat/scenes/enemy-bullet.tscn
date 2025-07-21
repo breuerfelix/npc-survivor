@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://b16irhvyqpb5h"]
+
+[ext_resource type="Script" uid="uid://pbyoq4yhkpuf" path="res://combat/enemy-bullet.gd" id="1_fjket"]
+[ext_resource type="Texture2D" uid="uid://b5aay3lbmdxou" path="res://assets/Effects/Purple Effect and Bullet 16x16.png" id="2_fjket"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4q3k"]
+atlas = ExtResource("2_fjket")
+region = Rect2(192, 112, 16, 16)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ayaf0"]
+radius = 6.0
+
+[node name="EnemyBullet" type="Area2D"]
+top_level = true
+z_index = 1
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_fjket")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.34479e-13)
+rotation = -1.5708
+scale = Vector2(0.735323, 0.735323)
+texture = SubResource("AtlasTexture_h4q3k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ayaf0")

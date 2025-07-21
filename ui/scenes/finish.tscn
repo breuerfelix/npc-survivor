@@ -1,0 +1,103 @@
+[gd_scene load_steps=2 format=3 uid="uid://dsulp5rlvhfhn"]
+
+[ext_resource type="Script" uid="uid://cymvblocxfvay" path="res://ui/finish.gd" id="1_ym4vy"]
+
+[node name="Finish" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ym4vy")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.475927, 0.475927, 0.475927, 1)
+self_modulate = Color(0.545098, 0.545098, 0.545098, 0.784314)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -191.0
+offset_right = 191.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 30
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "you dead. loser."
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.5
+offset_right = 206.5
+offset_bottom = 369.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 70
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "get back to work!"
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.5
+offset_right = 206.5
+offset_bottom = 369.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 300
+
+[node name="Stats" type="Label" parent="MarginContainer4"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "1
+2
+3
+4
+5
+6
+7
+8"
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -142.0
+offset_right = 75.0
+offset_bottom = 88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 150
+
+[node name="Button" type="Button" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "quit"
+
+[connection signal="pressed" from="MarginContainer3/Button" to="." method="_on_button_pressed"]

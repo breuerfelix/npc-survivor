@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://5w5qqkiy5k34"]
+
+[ext_resource type="Texture2D" uid="uid://gn0v0lvydagk" path="res://assets/Effects/01.png" id="1_0s7ec"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1hiu"]
+atlas = ExtResource("1_0s7ec")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahl5h"]
+atlas = ExtResource("1_0s7ec")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeynu"]
+atlas = ExtResource("1_0s7ec")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2dn75"]
+atlas = ExtResource("1_0s7ec")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qc36"]
+atlas = ExtResource("1_0s7ec")
+region = Rect2(256, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6adf"]
+atlas = ExtResource("1_0s7ec")
+region = Rect2(320, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1r07"]
+atlas = ExtResource("1_0s7ec")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o8h8"]
+atlas = ExtResource("1_0s7ec")
+region = Rect2(448, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cbwnp"]
+atlas = ExtResource("1_0s7ec")
+region = Rect2(512, 320, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wmde8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1hiu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahl5h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeynu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2dn75")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qc36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6adf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l1r07")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7o8h8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cbwnp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+z_index = 1
+sprite_frames = SubResource("SpriteFrames_wmde8")
+autoplay = "default"
+frame = 3
+frame_progress = 0.542464

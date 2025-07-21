@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dagox7vp07bko"]
+
+[ext_resource type="Texture2D" uid="uid://gn0v0lvydagk" path="res://assets/Effects/01.png" id="1_0x8t3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maexa"]
+atlas = ExtResource("1_0x8t3")
+region = Rect2(128, 320, 64, 64)
+
+[node name="FireAura" type="TextureRect"]
+texture = SubResource("AtlasTexture_maexa")

@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1wptwv36ysen"]
+
+[ext_resource type="Script" uid="uid://cixsddvjpwg6k" path="res://combat/staff.gd" id="1_3gxsk"]
+[ext_resource type="Texture2D" uid="uid://dq66r1pu0btkf" path="res://assets/Weapons/staves-16x16.png" id="2_3gxsk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3gxsk"]
+radius = 235.077
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ov8dy"]
+radius = 57.0088
+
+[node name="Weapon" type="Node2D"]
+z_index = 1
+script = ExtResource("1_3gxsk")
+
+[node name="OuterCircle" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterCircle"]
+shape = SubResource("CircleShape2D_3gxsk")
+
+[node name="InnerCircle" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InnerCircle"]
+shape = SubResource("CircleShape2D_ov8dy")
+
+[node name="WeaponPivot" type="Marker2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="WeaponPivot"]
+position = Vector2(29, -2.38419e-07)
+rotation = 2.35619
+texture = ExtResource("2_3gxsk")
+region_enabled = true
+region_rect = Rect2(48, 32, 16, 16)
+
+[node name="ShootingPoint" type="Marker2D" parent="WeaponPivot/Sprite2D"]
+position = Vector2(-11.0828, -11.0828)
+rotation = -2.35619
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.2
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

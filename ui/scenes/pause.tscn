@@ -1,0 +1,115 @@
+[gd_scene load_steps=2 format=3 uid="uid://c80vucbrlhx2a"]
+
+[ext_resource type="Script" uid="uid://drrrom0qbn7g2" path="res://ui/pause.gd" id="1_hcgv8"]
+
+[node name="Pause" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hcgv8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(0.233926, 0.233925, 0.233925, 1)
+self_modulate = Color(0.545098, 0.545098, 0.545098, 0.784314)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -191.0
+offset_right = 191.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 150
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "paused."
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.5
+offset_right = 206.5
+offset_bottom = 369.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 300
+
+[node name="Label" type="Label" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "get a coffee."
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.5
+offset_right = 206.5
+offset_bottom = 369.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 450
+
+[node name="Label" type="Label" parent="MarginContainer4"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 50
+text = "but fast."
+
+[node name="MarginContainer3" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -230.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 200
+
+[node name="Button" type="Button" parent="MarginContainer3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "go"
+
+[node name="MarginContainer5" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -75.0
+offset_top = -107.0
+offset_right = 75.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 75
+
+[node name="Button" type="Button" parent="MarginContainer5"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 50
+text = "quit"
+
+[connection signal="pressed" from="MarginContainer3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="MarginContainer5/Button" to="." method="_on_button_pressed_quit"]

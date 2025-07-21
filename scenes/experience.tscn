@@ -1,0 +1,84 @@
+[gd_scene load_steps=10 format=3 uid="uid://p1extuh3wtww"]
+
+[ext_resource type="Texture2D" uid="uid://bsj3px5knij1t" path="res://assets/Effects/Water Effect and Bullet 16x16.png" id="1_p7xpp"]
+[ext_resource type="Script" uid="uid://dwecwoqjcwimm" path="res://scripts/experience.gd" id="1_sk4pw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk4pw"]
+atlas = ExtResource("1_p7xpp")
+region = Rect2(304, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3cgv"]
+atlas = ExtResource("1_p7xpp")
+region = Rect2(320, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iudx8"]
+atlas = ExtResource("1_p7xpp")
+region = Rect2(336, 144, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4gcu"]
+atlas = ExtResource("1_p7xpp")
+region = Rect2(352, 144, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvftj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk4pw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3cgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iudx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4gcu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iird6"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sk4pw"]
+radius = 232.002
+
+[node name="Experience" type="Node2D"]
+z_index = 1
+script = ExtResource("1_sk4pw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_jvftj")
+autoplay = "default"
+frame_progress = 0.508783
+speed_scale = 2.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 0.262745)
+position = Vector2(0, 5)
+scale = Vector2(0.5, 0.19)
+texture = ExtResource("1_p7xpp")
+region_enabled = true
+region_rect = Rect2(320, 144, 16, 16)
+
+[node name="Bubble" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bubble"]
+shape = SubResource("CircleShape2D_iird6")
+
+[node name="PickUpArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickUpArea"]
+shape = SubResource("CircleShape2D_sk4pw")
+
+[connection signal="body_entered" from="Bubble" to="." method="_on_bubble_body_entered"]
+[connection signal="body_entered" from="PickUpArea" to="." method="_on_pick_up_area_body_entered"]

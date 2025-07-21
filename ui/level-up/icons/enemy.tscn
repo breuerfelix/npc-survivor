@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgk5vgnoor3is"]
+
+[ext_resource type="Texture2D" uid="uid://cicoq6wskuvp" path="res://assets/Tilesheet/colored-transparent.png" id="1_ui7rh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maexa"]
+atlas = ExtResource("1_ui7rh")
+region = Rect2(612, 357, 16, 16)
+
+[node name="Enemy" type="TextureRect"]
+texture = SubResource("AtlasTexture_maexa")

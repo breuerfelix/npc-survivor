@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8qirheuu1gf8"]
+
+[ext_resource type="Script" uid="uid://4kmn5p2fuxdg" path="res://combat/aura.gd" id="1_ignge"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bhp8"]
+radius = 25.0
+
+[node name="Aura" type="Area2D"]
+collision_layer = 0
+collision_mask = 4
+monitorable = false
+script = ExtResource("1_ignge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1bhp8")

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch6kfvkq0uj51"]
+
+[ext_resource type="Texture2D" uid="uid://cicoq6wskuvp" path="res://assets/Tilesheet/colored-transparent.png" id="1_85v1w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q50ck"]
+atlas = ExtResource("1_85v1w")
+region = Rect2(816, 34, 16, 16)
+
+[node name="Heart" type="TextureRect"]
+texture = SubResource("AtlasTexture_q50ck")

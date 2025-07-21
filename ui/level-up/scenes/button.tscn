@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://bcfpa32drs1t8"]
+
+[ext_resource type="Script" uid="uid://bs80r02t7j6db" path="res://ui/level-up/button.gd" id="1_373lx"]
+
+[node name="Button" type="Button"]
+self_modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(80, 170)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_373lx")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 25

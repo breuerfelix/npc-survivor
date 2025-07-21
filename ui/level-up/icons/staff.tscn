@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dg21bco5efih1"]
+
+[ext_resource type="Texture2D" uid="uid://dq66r1pu0btkf" path="res://assets/Weapons/staves-16x16.png" id="1_cb226"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_maexa"]
+atlas = ExtResource("1_cb226")
+region = Rect2(48, 32, 16, 16)
+
+[node name="FireAura" type="TextureRect"]
+texture = SubResource("AtlasTexture_maexa")

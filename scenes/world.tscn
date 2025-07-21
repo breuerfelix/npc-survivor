@@ -1,0 +1,42 @@
+[gd_scene load_steps=10 format=3 uid="uid://cm8jjym4cls82"]
+
+[ext_resource type="Script" uid="uid://bbgldk7j26sg" path="res://scripts/world.gd" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dgokq5t7p0bo0" path="res://scenes/character.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://dm74igt1dl4w2" path="res://scenes/map.tscn" id="2_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://p1extuh3wtww" path="res://scenes/experience.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://cbum4ledkuhsv" path="res://ui/level-up/scenes/frame.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dsulp5rlvhfhn" path="res://ui/scenes/finish.tscn" id="5_i7141"]
+[ext_resource type="PackedScene" uid="uid://rip5dfhhgfhd" path="res://ui/scenes/start.tscn" id="6_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://bjlrlhytgrhbj" path="res://scenes/enemy.tscn" id="6_qfnet"]
+[ext_resource type="PackedScene" uid="uid://c80vucbrlhx2a" path="res://ui/scenes/pause.tscn" id="7_7r4gi"]
+
+[node name="World" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_k0juu")
+
+[node name="Map" parent="." instance=ExtResource("2_7r4gi")]
+
+[node name="Character" parent="." instance=ExtResource("1_nnsk1")]
+unique_name_in_owner = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+
+[node name="LevelUp" parent="UI" instance=ExtResource("4_k0juu")]
+visible = false
+
+[node name="Finish" parent="UI" instance=ExtResource("5_i7141")]
+visible = false
+
+[node name="Start" parent="UI" instance=ExtResource("6_4mrxx")]
+visible = false
+
+[node name="Pause" parent="UI" instance=ExtResource("7_7r4gi")]
+visible = false
+
+[node name="Experience" parent="." instance=ExtResource("3_4wyf3")]
+position = Vector2(-160, -11)
+
+[node name="Enemy" parent="." instance=ExtResource("6_qfnet")]
+position = Vector2(97, -114)

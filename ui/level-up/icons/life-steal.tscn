@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dduc7fm6ur5ge"]
+
+[ext_resource type="Texture2D" uid="uid://cicoq6wskuvp" path="res://assets/Tilesheet/colored-transparent.png" id="1_4ic2q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q50ck"]
+atlas = ExtResource("1_4ic2q")
+region = Rect2(714, 170, 16, 16)
+
+[node name="LifeSteal" type="TextureRect"]
+texture = SubResource("AtlasTexture_q50ck")
